@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Edit Users</title>
+        <link ref='stylesheet' href="{{url_for('static',filename='Design.css')}}">
+    </head>
+    <body>
+        <h2>Update Users</h2>
+        <form action="" method="POST">
+            <label>NAME</label>
+            <input type="text" name="NAME" value="{{details.NAME}}">
+            <br>
+            <label>AGE</label>
+            <input type="text" name="AGE" value="{{details.AGE}}">
+            <br>
+            <label>CITY</label>
+            <input type="text" name="CITY" value="{{details.CITY}}">
+            <br>
+            <label>MOBILE</label>
+            <input type="text" name="MOBILE" value="{{details.MOBILE}}">
+            <br>
+            <input type="submit" value="Update Details">
+        </form>
+ 
+    </body>
+</html>
