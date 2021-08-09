@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>CRUD Application</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='Design.css')}}">
+        <style>
+            h1{
+                text-align: center;
+            }
+            p{
+                width: 200px;
+                height: 5px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>User Data</h1>
+        <p><a href="{{url_for('addusers')}}" target="_blank">Add New Users</a></p>
+        <table cellspacing="20px">
+            <div>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>AGE</th>
+                    <th>CITY</th>
+                    <th>MOBILE</th>
+                    <th>UPDATE</th>
+                    <th>DELETE</th>
+                </tr>
+            </div>
+            {%for data in details%}
+                <tr>
+                    <td>{{data.ID}}</td>
+                    <td>{{data.NAME}}</td>
+                    <td>{{data.AGE}}</td>
+                    <td>{{data.CITY}}</td>
+                    <td>{{data.MOBILE}}</td>
+                    <td><a href="{{url_for('updateusers',ID=data.ID)}}">Update Users</td>
+                    <td><a href="{{url_for('deleteusers',ID=data.ID)}}">Delete Users</a></td>
+                </tr>
+            {%endfor%}
+        </table>    
+    
+    </body>
+</html>
